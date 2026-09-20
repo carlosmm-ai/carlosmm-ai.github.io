@@ -1,5 +1,5 @@
 // URL de tu Worker en Cloudflare (Solo la ruta pública, sin secrets)
-const WORKER_URL = "https://carlos-portfolio-bot.<tu-subdominio>.workers.dev/chat";
+const WORKER_URL = "https://carlos-portfolio-bot.projects-dom95.workers.dev/chat";
 
 const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
