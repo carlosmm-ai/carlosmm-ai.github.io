@@ -136,7 +136,54 @@
     </div>
 
     <hr>
+    
+<!-- SECCIÓN CHATBOT RAG -->
+<section id="portfolio-chat-section" class="chat-section">
+  <div class="chat-wrapper">
+    <div class="chat-card">
+      <header class="chat-card-header">
+        <div class="header-status">
+          <span class="status-indicator"></span>
+          <h3>Pregúntame sobre Carlos</h3>
+        </div>
+        <p>Asistente con RAG basado en mi trayectoria profesional y CV.</p>
+      </header>
 
+      <!-- Sugerencias rápidas para el visitante -->
+      <div class="chat-chips" id="chat-chips">
+        <button type="button" class="chip-btn" data-query="¿Qué experiencia tiene Carlos con Python?">Python & Datos</button>
+        <button type="button" class="chip-btn" data-query="¿Qué proyectos ha desarrollado con Machine Learning?">Machine Learning</button>
+        <button type="button" class="chip-btn" data-query="¿Qué experiencia tiene en Power BI y automatización?">BI & Automatización</button>
+      </div>
+
+      <!-- Contenedor de mensajes -->
+      <div class="chat-body" id="chat-messages" aria-live="polite">
+        <div class="message bot-message">
+          <p>¡Hola! Soy el asistente virtual de Carlos. Puedes preguntarme sobre su experiencia técnica, herramientas, formación o proyectos. ¿Qué te gustaría saber?</p>
+        </div>
+      </div>
+
+      <!-- Formulario de entrada -->
+      <form id="chat-form" class="chat-footer">
+        <input 
+          type="text" 
+          id="chat-input" 
+          placeholder="Escribe una pregunta sobre mi perfil..." 
+          autocomplete="off" 
+          maxlength="400" 
+          required 
+        />
+        <button type="submit" id="chat-submit-btn" aria-label="Enviar mensaje">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+  
     <p class="footer-text">
       ¿Quieres conectar o colaborar en algún proyecto? Escríbeme a 
       <a href="mailto:ing.cpmoreno@gmail.com">ing.cpmoreno@gmail.com</a>
