@@ -3,242 +3,302 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio en Construcción | Carlos Moreno</title>
+  <title>Carlos Moreno | Data Scientist & Analytics Engineer</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg-main: #090d16;
+      --card-bg: rgba(17, 24, 39, 0.75);
+      --card-border: rgba(56, 189, 248, 0.15);
+      --accent-cyan: #38bdf8;
+      --accent-blue: #2563eb;
+      --accent-emerald: #10b981;
+      --text-white: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-ui: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-code: 'JetBrains Mono', monospace;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: var(--font-ui);
     }
+
     body {
-      background-color: #0f172a;
-      color: #f8fafc;
+      background-color: var(--bg-main);
+      color: var(--text-white);
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.08) 0%, transparent 40%);
     }
-    .card {
-      background-color: #1e293b;
-      max-width: 860px;
+
+    .main-container {
+      max-width: 1200px;
       width: 100%;
-      border-radius: 16px;
-      padding: 3rem 2rem;
-      text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
     }
+
+    /* COLUMNA IZQUIERDA: PRESENTACIÓN TÉCNICA */
+    .hero-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background-color: rgba(56, 189, 248, 0.12);
-      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent-cyan);
       border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 0.4rem 1.1rem;
+      padding: 0.4rem 0.9rem;
       border-radius: 9999px;
       font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.06em;
-      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
+      width: fit-content;
     }
+
     .badge-dot {
       width: 8px;
       height: 8px;
-      background-color: #38bdf8;
+      background-color: var(--accent-cyan);
       border-radius: 50%;
-      box-shadow: 0 0 8px #38bdf8;
-    }
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-    .lead {
-      color: #94a3b8;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      max-width: 620px;
-      margin: 0 auto 2rem auto;
-    }
-    .tree-box {
-      background-color: #0b1120;
-      border: 1px solid #334155;
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
-      text-align: left;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 0.92rem;
-      color: #cbd5e1;
-      max-width: 480px;
-      margin: 0 auto 2rem auto;
-      box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.4);
-    }
-    .tree-title {
-      color: #38bdf8;
-      margin-bottom: 0.6rem;
-      font-weight: 600;
-    }
-    .tree-branch {
-      color: #64748b;
-    }
-    .tree-item {
-      color: #e2e8f0;
-    }
-    hr {
-      border: 0;
-      border-top: 1px solid #334155;
-      margin: 2rem 0;
-    }
-    .footer-text {
-      color: #94a3b8;
-      font-size: 0.92rem;
-      margin-top: 2rem;
-    }
-    .footer-text a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-    .footer-text a:hover {
-      color: #7dd3fc;
-      text-decoration: underline;
+      box-shadow: 0 0 10px var(--accent-cyan);
+      animation: pulse 2s infinite;
     }
 
-    /* ==========================================================
-       ESTILOS DEL CHATBOT RAG (Adaptados al tema oscuro del sitio)
-       ========================================================== */
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .lead {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Visualizador del árbol de carpetas con estilo terminal */
+    .tree-box {
+      background: #050811;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 1.25rem;
+      font-family: var(--font-code);
+      font-size: 0.85rem;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .tree-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .circle-red { background: #ef4444; }
+    .circle-yellow { background: #f59e0b; }
+    .circle-green { background: #10b981; }
+
+    .tree-title {
+      color: var(--accent-cyan);
+      font-size: 0.75rem;
+      margin-left: 6px;
+    }
+
+    .tree-branch { color: #475569; }
+    .tree-item { color: #cbd5e1; }
+    .tree-tag {
+      color: #38bdf8;
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .stack-pill {
+      font-family: var(--font-code);
+      font-size: 0.75rem;
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid #334155;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      color: #94a3b8;
+    }
+
+    /* COLUMNA DERECHA: CHATBOT RAG PROFESIONAL */
     .chat-section {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: 1rem 0;
-      text-align: left;
     }
-    .chat-wrapper {
-      width: 100%;
-      max-width: 720px;
-    }
+
     .chat-card {
-      background: #0b1120;
-      border-radius: 14px;
-      border: 1px solid #334155;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(56, 189, 248, 0.05);
       display: flex;
       flex-direction: column;
-      height: 500px;
+      height: 560px;
       overflow: hidden;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
     }
+
     .chat-card-header {
-      padding: 1rem 1.25rem;
-      background: #020617;
-      border-bottom: 1px solid #1e293b;
+      padding: 1.1rem 1.4rem;
+      background: rgba(11, 17, 32, 0.9);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
     }
+
     .header-status {
       display: flex;
       align-items: center;
       gap: 8px;
     }
+
     .header-status h3 {
-      margin: 0;
-      font-size: 1.05rem;
-      color: #f8fafc;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-white);
     }
+
     .status-indicator {
-      width: 8px;
-      height: 8px;
-      background-color: #22c55e;
+      width: 9px;
+      height: 9px;
+      background-color: var(--accent-emerald);
       border-radius: 50%;
-      display: inline-block;
-      box-shadow: 0 0 8px #22c55e;
+      box-shadow: 0 0 10px var(--accent-emerald);
     }
+
     .chat-card-header p {
-      margin: 4px 0 0 16px;
+      margin-top: 4px;
       font-size: 0.8rem;
-      color: #94a3b8;
+      color: var(--text-muted);
     }
+
     .chat-chips {
       display: flex;
       gap: 8px;
-      padding: 0.6rem 1rem;
-      background: #0f172a;
-      border-bottom: 1px solid #1e293b;
+      padding: 0.7rem 1.25rem;
+      background: rgba(15, 23, 42, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       overflow-x: auto;
     }
+
     .chip-btn {
       background: #1e293b;
       border: 1px solid #334155;
-      border-radius: 20px;
+      border-radius: 16px;
       padding: 5px 12px;
-      font-size: 0.78rem;
-      color: #94a3b8;
+      font-size: 0.75rem;
+      color: #cbd5e1;
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.2s;
+      transition: all 0.2s ease;
     }
+
     .chip-btn:hover {
-      background: #38bdf8;
+      background: var(--accent-cyan);
       color: #0f172a;
-      border-color: #38bdf8;
+      border-color: var(--accent-cyan);
     }
+
     .chat-body {
       flex: 1;
-      padding: 1rem;
+      padding: 1.25rem;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      background: #0b1120;
     }
+
     .message {
-      max-width: 85%;
-      padding: 10px 14px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      max-width: 88%;
+      padding: 11px 15px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      line-height: 1.55;
       word-wrap: break-word;
     }
+
     .bot-message {
       background-color: #1e293b;
       color: #e2e8f0;
       align-self: flex-start;
-      border-bottom-left-radius: 2px;
-      border: 1px solid #334155;
+      border-bottom-left-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
+
     .user-message {
-      background-color: #0284c7;
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
       color: #ffffff;
       align-self: flex-end;
-      border-bottom-right-radius: 2px;
+      border-bottom-right-radius: 3px;
     }
+
     .chat-footer {
       display: flex;
-      padding: 0.75rem 1rem;
-      border-top: 1px solid #1e293b;
-      background: #020617;
+      padding: 0.85rem 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(11, 17, 32, 0.95);
       gap: 8px;
     }
+
     #chat-input {
       flex: 1;
-      padding: 10px 14px;
+      padding: 11px 15px;
       background: #0f172a;
       border: 1px solid #334155;
       border-radius: 8px;
-      color: #f8fafc;
-      font-size: 0.9rem;
+      color: var(--text-white);
+      font-size: 0.88rem;
       outline: none;
+      transition: border-color 0.2s;
     }
+
     #chat-input:focus {
-      border-color: #38bdf8;
+      border-color: var(--accent-cyan);
     }
+
     #chat-submit-btn {
-      background-color: #0284c7;
+      background: var(--accent-blue);
       color: #ffffff;
       border: none;
       border-radius: 8px;
@@ -247,97 +307,159 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.2s;
+      transition: background 0.2s;
     }
+
     #chat-submit-btn:hover {
-      background-color: #0369a1;
+      background: #1d4ed8;
     }
+
     #chat-submit-btn:disabled {
-      background-color: #475569;
+      background: #334155;
       cursor: not-allowed;
+    }
+
+    /* FOOTER Y PRIVACIDAD (FASE 12) */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .privacy-note {
+      font-size: 0.74rem;
+      color: #64748b;
+      margin-top: 0.4rem;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* RESPONSIVE: VUELVE A 1 COLUMNA EN MÓVILES */
+    @media (max-width: 960px) {
+      .main-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .chat-card {
+        height: 500px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <div class="badge">
-      <span class="badge-dot"></span>
-      Espacio en remodelación
-    </div>
 
-    <h1>Rediseñando mi portafolio profesional</h1>
-
-    <p class="lead">
-      Estoy actualizando y reestructurando este espacio para compartir mis casos de estudio, soluciones técnicas y proyectos recientes. Pronto estará disponible con las siguientes secciones:
-    </p>
-
-    <div class="tree-box">
-      <div class="tree-title">portfolio/</div>
-      <div><span class="tree-branch">├──</span> <span class="tree-item">Sobre mí</span></div>
-      <div><span class="tree-branch">├──</span> <span class="tree-item">Experiencia</span></div>
-      <div><span class="tree-branch">├──</span> <span class="tree-item">Skills</span></div>
-      <div><span class="tree-branch">├──</span> <span class="tree-item">Proyectos</span></div>
-      <div><span class="tree-branch">│   ├──</span> <span class="tree-item">Data Science</span></div>
-      <div><span class="tree-branch">│   ├──</span> <span class="tree-item">BI / Analytics</span></div>
-      <div><span class="tree-branch">│   └──</span> <span class="tree-item">Automatización</span></div>
-      <div><span class="tree-branch">└──</span> <span class="tree-item">Contacto</span></div>
-    </div>
-
-    <hr>
+  <main class="main-container">
     
-    <!-- SECCIÓN CHATBOT RAG -->
-    <section id="portfolio-chat-section" class="chat-section">
-      <div class="chat-wrapper">
-        <div class="chat-card">
-          <header class="chat-card-header">
-            <div class="header-status">
-              <span class="status-indicator"></span>
-              <h3>Pregúntame sobre Carlos</h3>
-            </div>
-            <p>Asistente RAG fundamentado exclusivamente en mi CV.</p>
-          </header>
+    <!-- COLUMNA 1: PERFIL PROFESIONAL Y SECCIONES -->
+    <section class="hero-info">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Portfolio Engine v2.0 • En Desarrollo
+      </div>
 
-          <div class="chat-chips" id="chat-chips">
-            <button type="button" class="chip-btn" data-query="¿Qué experiencia tiene Carlos con Python y automatización?">Python & Automatización</button>
-            <button type="button" class="chip-btn" data-query="¿Qué proyectos ha desarrollado con Machine Learning?">Machine Learning</button>
-            <button type="button" class="chip-btn" data-query="¿Qué experiencia tiene en Power BI?">Power BI & Dashboards</button>
-          </div>
+      <h1>Carlos Moreno<br><span>Data & Analytics</span></h1>
 
-          <div class="chat-body" id="chat-messages" aria-live="polite">
-            <div class="message bot-message">
-              <p>¡Hola! Soy el asistente virtual de Carlos. Pregúntame sobre su experiencia laboral, herramientas técnicas, proyectos o formación académica.</p>
-            </div>
-          </div>
+      <p class="lead">
+        Ingeniero especializado en Ciencia de Datos, Inteligencia de Negocios y Optimización de Procesos. Actualmente reconstruyendo este espacio para documentar arquitecturas, modelos predictivos y pipelines de analítica avanzada.
+      </p>
 
-          <form id="chat-form" class="chat-footer">
-            <input 
-              type="text" 
-              id="chat-input" 
-              placeholder="Escribe una pregunta sobre mi perfil profesional..." 
-              autocomplete="off" 
-              maxlength="400" 
-              required 
-            />
-            <button type="submit" id="chat-submit-btn" aria-label="Enviar pregunta">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-          </form>
+      <!-- Arquitectura de secciones planificadas -->
+      <div class="tree-box">
+        <div class="tree-header">
+          <span class="circle circle-red"></span>
+          <span class="circle circle-yellow"></span>
+          <span class="circle circle-green"></span>
+          <span class="tree-title">modules_in_progress.sh</span>
         </div>
+        <div><span class="tree-branch">├──</span> <span class="tree-item">01_experience/</span> <span class="tree-tag"># Trayectoria & ROI</span></div>
+        <div><span class="tree-branch">├──</span> <span class="tree-item">02_machine_learning/</span> <span class="tree-tag"># Modelos predictivos</span></div>
+        <div><span class="tree-branch">├──</span> <span class="tree-item">03_bi_analytics/</span> <span class="tree-tag"># DAX & Dashboards</span></div>
+        <div><span class="tree-branch">├──</span> <span class="tree-item">04_automation_rag/</span> <span class="tree-tag"># Pipelines & LLMs</span></div>
+        <div><span class="tree-branch">└──</span> <span class="tree-item">05_contact/</span> <span class="tree-tag"># Networking</span></div>
+      </div>
+
+      <div class="tech-stack">
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">SQL</span>
+        <span class="stack-pill">Power BI (DAX)</span>
+        <span class="stack-pill">Machine Learning</span>
+        <span class="stack-pill">ETL / Pipelines</span>
+        <span class="stack-pill">FastAPI & RAG</span>
       </div>
     </section>
-    
-    <p class="footer-text">
-      ¿Quieres conectar o colaborar en algún proyecto? Escríbeme a 
-      <a href="mailto:ing.cpmoreno@gmail.com">ing.cpmoreno@gmail.com</a>
-    </p>
-  </div>
 
-  <!-- JAVASCRIPT DEL CLIENTE CHATBOT -->
+    <!-- COLUMNA 2: CHATBOT RAG EN TIEMPO REAL -->
+    <section class="chat-section">
+      <div class="chat-card">
+        <header class="chat-card-header">
+          <div class="header-status">
+            <span class="status-indicator"></span>
+            <h3>CV Intelligence Bot (RAG)</h3>
+          </div>
+          <p>Consulta mi trayectoria mediante búsqueda semántica sobre mi CV oficial.</p>
+        </header>
+
+        <div class="chat-chips" id="chat-chips">
+          <button type="button" class="chip-btn" data-query="¿Qué experiencia tiene Carlos con Python y automatización?">Python & Flujos</button>
+          <button type="button" class="chip-btn" data-query="¿Qué proyectos de Machine Learning ha desarrollado?">Machine Learning</button>
+          <button type="button" class="chip-btn" data-query="¿Qué experiencia tiene en Power BI y Business Intelligence?">Power BI & DAX</button>
+        </div>
+
+        <div class="chat-body" id="chat-messages" aria-live="polite">
+          <div class="message bot-message">
+            <p>¡Hola! Soy el asistente técnico de Carlos. Mi base de conocimiento está sincronizada en tiempo real con su hoja de vida y certificaciones. ¿Qué te gustaría consultar?</p>
+          </div>
+        </div>
+
+        <form id="chat-form" class="chat-footer">
+          <input 
+            type="text" 
+            id="chat-input" 
+            placeholder="Pregúntame sobre herramientas, impacto o roles..." 
+            autocomplete="off" 
+            maxlength="400" 
+            required 
+          />
+          <button type="submit" id="chat-submit-btn" aria-label="Consultar perfil">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA Y POLÍTICA DE PRIVACIDAD (FASE 12) -->
+  <footer>
+    <p>¿Interesado en colaborar? Contáctame en <a href="mailto:ing.cpmoreno@gmail.com">ing.cpmoreno@gmail.com</a></p>
+    <p class="privacy-note">
+      🔒 <strong>Aviso de Privacidad:</strong> Las preguntas son procesadas mediante un Cloudflare Worker y la API de Gemini exclusivamente para responder en esta sesión. No se almacenan datos personales ni cookies.
+    </p>
+  </footer>
+
+  <!-- CLIENTE JAVASCRIPT CON LIMPIEZA DE CITAS -->
   <script>
-    // REEMPLAZA ESTA URL CON LA DE TU WORKER REAL
     const WORKER_URL = "https://carlos-portfolio-bot.projects-dom95.workers.dev/chat";
 
     const chatForm = document.getElementById("chat-form");
@@ -350,7 +472,11 @@
       const msgDiv = document.createElement("div");
       msgDiv.className = `message ${sender}-message`;
       
-      const formattedText = text
+      // 1. Limpieza de etiquetas automáticas de citación de Gemini
+      let cleanedText = text.replace(/\+\]/gi, "");
+
+      // 2. Formateo semántico (negritas y viñetas)
+      const formattedText = cleanedText
         .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
         .replace(/\n\*/g, "<br>•")
         .replace(/\n/g, "<br>");
@@ -372,7 +498,7 @@
       const loadingDiv = document.createElement("div");
       loadingDiv.className = "message bot-message";
       loadingDiv.id = "chat-loading";
-      loadingDiv.innerHTML = "<em>Consultando base de conocimiento...</em>";
+      loadingDiv.innerHTML = "<em>Buscando en base de conocimiento vectorial...</em>";
       chatMessages.appendChild(loadingDiv);
       chatMessages.scrollTop = chatMessages.scrollHeight;
 
