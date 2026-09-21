@@ -412,9 +412,9 @@
         <header class="chat-card-header">
           <div class="header-status">
             <span class="status-indicator"></span>
-            <h3>CV Intelligence Bot (RAG)</h3>
+            <h3>CV Intelligence Bot</h3>
           </div>
-          <p>Consulta mi trayectoria mediante búsqueda semántica sobre mi CV oficial.</p>
+          <p>Consulta mi trayectoria mediante el chat bot sobre mi CV oficial.</p>
         </header>
 
         <div class="chat-chips" id="chat-chips">
@@ -497,7 +497,7 @@
       const loadingDiv = document.createElement("div");
       loadingDiv.className = "message bot-message";
       loadingDiv.id = "chat-loading";
-      loadingDiv.innerHTML = "<em>Buscando en base de conocimiento vectorial...</em>";
+      loadingDiv.innerHTML = "<em>Estoy consultado la información en el CV</em>";
       chatMessages.appendChild(loadingDiv);
       chatMessages.scrollTop = chatMessages.scrollHeight;
 
