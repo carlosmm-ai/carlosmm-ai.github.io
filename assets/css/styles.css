@@ -21,12 +21,6 @@
   overflow: hidden;
 }
 
-.chat-card-header {
-  padding: 1rem 1.25rem;
-  background: #0f172a;
-  color: #f8fafc;
-}
-
 .header-status {
   display: flex;
   align-items: center;
@@ -184,24 +178,57 @@
 
 /* Encabezado del chat */
 .chat-card-header {
-  padding: 1.25rem 1.5rem;
-  background: #0f172a;
-  color: #f8fafc;
-  border-bottom: 1px solid #1e293b;
-}
+      padding: 1rem 1.3rem;
+      background: rgba(11, 17, 32, 0.95);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    }
 
-.header-status {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    .header-status {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-.header-status h3 {
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
+    .header-status h3 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-white);
+      margin: 0;
+    }
+
+    .header-status p {
+      margin: 2px 0 0 0;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Badge contenedor del robot */
+    .bot-avatar-badge {
+      position: relative;
+      width: 38px;
+      height: 38px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #38bdf8;
+      flex-shrink: 0;
+    }
+
+    /* El punto verde activo posicionado en la esquina del avatar */
+    .bot-avatar-badge .status-indicator {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-emerald);
+      border: 2px solid #0b1120;
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--accent-emerald);
+    }
 
 .status-indicator {
   width: 10px;
